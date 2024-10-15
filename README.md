@@ -1,7 +1,7 @@
 # bitcointalk.org-mobile_mode
 mobile mode by greasemonkey or tampermonkey
 
-made with love [babo](https://bitcointalk.org/index.php?action=profile;u=65636)
+made with love [babo](https://bitcointalk.org/index.php?action=profile;u=65636) - [bitcointalk.org thread](https://bitcointalk.org/index.php?topic=5513278.0)
 
 
 ## demo
