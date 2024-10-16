@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     bitcointalk mobile
 // @author   babo
-// @version  1.1
+// @version  1.2
 // @namespace https://bitcointalk.org/
 // @include https://bitcointalk.org/*
 // @require https://code.jquery.com/jquery-2.2.4.min.js
@@ -239,24 +239,40 @@
         hr,
         table[cellpadding="3"] table[cellpadding="5"] td.smalltext[valign="bottom"][width="85%"],
         .bordercolor tbody tr td.windowbg2:nth-child(1),
-        .bordercolor tbody tr td.windowbg2:nth-child(2),
+        /* .bordercolor tbody tr td.windowbg2:nth-child(2), */
         .bordercolor tbody tr td.windowbg2:nth-child(4),
         .bordercolor tbody tr td.windowbg:nth-child(5),
         .bordercolor tbody tr td.windowbg:nth-child(6),
         .bordercolor tbody tr td.windowbg2:nth-child(7)
-				{ display: none; }
-        .windowbg,.windowbg2 { border: 0; }
+				{
+        	display: none;
+        }
+        
+        .windowbg,
+        .windowbg2 {
+        	border: 0;
+        }
+        
         table {
         	border-collapse: collapse;
 				}
-        .bordercolor tr table { margin: 1px 0; }
+        
+        .bordercolor tr table {
+        	margin: 1px 0;
+        }
+        
         .bordercolor td.windowbg:has(img.avatar) {
         	display: none;
         }
+        
         .msgcl1 { padding: 0; }
-        .msgcl1 .windowbg { display: block !important; }
-        .msgcl1 .windowbg2 { display: block !important; }
-        .mirrortab_back, .mirrortab_back a { color: transparent !important }
+        .msgcl1 .windowbg,
+        .msgcl1 .windowbg2 {
+        	display: block !important;
+        }
+        .mirrortab_back, .mirrortab_back a {
+        	color: transparent !important
+        }
         .mirrortab_back a:nth-child(1) {
         	background: orange; color: white !important;
           padding: 10px;
@@ -264,6 +280,30 @@
 			  	border-radius: 10px;
           position:fixed;
           bottom: 10px; left: 10px;
+        }
+        
+        /*.tborder tr td:nth-child(2) {
+          display: none;
+        }*/
+
+        .bordercolor { background-color: transparent !important; }
+        .catbg3:nth-child(0),
+        .catbg3:nth-child(2),
+        .catbg3:nth-child(3),
+        div.nav:nth-child(1),
+        table.titlebg2,
+        #footerarea,
+        .titlebg2
+        {
+          display: none !important;
+        }
+        div.nav { margin: 0 !important; }
+        table:has(td.maintab_back) {
+        	width:100% !important;
+          margin: 0 !important;
+        }
+        #bodyarea {
+        	padding: 0 !important;
         }
     		`;
 
