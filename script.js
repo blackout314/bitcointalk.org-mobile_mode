@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name     bitcointalk mobile https://github.com/blackout314/bitcointalk.org-mobile_mode
+// @name     bitcointalk mobile
 // @author   babo
-// @version  1.0
+// @version  1.1
 // @namespace https://bitcointalk.org/
 // @include https://bitcointalk.org/*
 // @require https://code.jquery.com/jquery-2.2.4.min.js
@@ -256,6 +256,15 @@
         .msgcl1 { padding: 0; }
         .msgcl1 .windowbg { display: block !important; }
         .msgcl1 .windowbg2 { display: block !important; }
+        .mirrortab_back, .mirrortab_back a { color: transparent !important }
+        .mirrortab_back a:nth-child(1) {
+        	background: orange; color: white !important;
+          padding: 10px;
+        	border: 1px black solid;
+			  	border-radius: 10px;
+          position:fixed;
+          bottom: 10px; left: 10px;
+        }
     		`;
 
         var style = document.createElement('style');
