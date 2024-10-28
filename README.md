@@ -9,7 +9,7 @@ v1.3
 ---
 button for profile info open/closed
 
-![](assets/profile-open.png){: width="10%"} ![](assets/profile-closed.png){: width="10%"}
+![](assets/profile-open.png|width=10) ![](assets/profile-closed.png){: width="10%"}
 
 v1.2
 ---
