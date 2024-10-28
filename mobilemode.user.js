@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     bitcointalk mobile
 // @author   babo
-// @version  1.2
+// @version  1.3
 // @namespace https://bitcointalk.org/
 // @include https://bitcointalk.org/*
 // @require https://code.jquery.com/jquery-2.2.4.min.js
@@ -12,7 +12,7 @@
     'use strict';
 
   	var mobile = window.screen.width;
-  	if (mobile < 400) {
+  	if (true && mobile < 400) {
       var meta = document.createElement('meta');
       meta.name = "viewport";
       meta.content = "width=device-width, initial-scale=1.0";
@@ -305,6 +305,7 @@
         #bodyarea {
         	padding: 0 !important;
         }
+        .poster_info .smalltext { opacity:0.4; display:none; }
     		`;
 
         var style = document.createElement('style');
@@ -313,5 +314,27 @@
         document.head.appendChild(style);
       
 			}, false);
+      appendButtonWithV();
+
     }
+  
+  function appendButtonWithV() {
+    const elements = document.querySelectorAll('.poster_info > b');
+    elements.forEach((element) => {
+      const button = document.createElement('div');
+      button.textContent = 'V';
+      button.style = "padding:2px; border:1px black solid; border-radius:2px; width: 10px; float:right; background: orange; color: white;";
+      button.addEventListener ("click", function(){
+        var $this = this;
+        var element = $this.parentElement.childNodes[5]; // OP
+        if(element.className !== 'smalltext') element = $this.parentElement.childNodes[3];
+        if(isVisible(element)) element.style="display:none";
+        else element.style="display:block";
+      }, false);
+      element.parentNode.appendChild(button);
+    });
+  }
+  function isVisible(element) {
+    return window.getComputedStyle(element).display !== 'none' && window.getComputedStyle(element).visibility !== 'hidden';
+	}
 })();
