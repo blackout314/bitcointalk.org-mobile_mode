@@ -5,6 +5,11 @@ mobile mode by greasemonkey or tampermonkey
 
 made with love [babo](https://bitcointalk.org/index.php?action=profile;u=65636) - [bitcointalk.org thread](https://bitcointalk.org/index.php?topic=5513278.0)
 
+v1.3
+---
+button for profile info open/closed
+![](assets/profile-open.png =250x) ![](assets/profile-closed.png =250x)
+
 v1.2
 ---
 fixes around
