@@ -8,7 +8,7 @@ made with love [babo](https://bitcointalk.org/index.php?action=profile;u=65636) 
 v1.3
 ---
 button for profile info open/closed
-![](assets/profile-open.png | width=50) ![](assets/profile-closed.png | width=50)
+![](assets/profile-open.png|width=50) ![](assets/profile-closed.png|width=50)
 
 v1.2
 ---
