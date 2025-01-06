@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     bitcointalk mobile
 // @author   babo
-// @version  1.3
+// @version  1.4
 // @namespace https://bitcointalk.org/
 // @include https://bitcointalk.org/*
 // @require https://code.jquery.com/jquery-2.2.4.min.js
@@ -12,6 +12,15 @@
     'use strict';
 
   	var mobile = window.screen.width;
+    const urlParams = window.location.href;
+		const paramsString = urlParams.split('?')[1];
+    const params = paramsString.split(';').reduce((acc, param) => {
+        const [key, value] = param.split('=');
+        acc[key] = value;
+        return acc;
+    }, {});
+    // console.log(params['action']);
+
   	if (true && mobile < 400) {
       var meta = document.createElement('meta');
       meta.name = "viewport";
@@ -236,18 +245,6 @@
           display: none;
         }
         
-        hr,
-        table[cellpadding="3"] table[cellpadding="5"] td.smalltext[valign="bottom"][width="85%"],
-        .bordercolor tbody tr td.windowbg2:nth-child(1),
-        /* .bordercolor tbody tr td.windowbg2:nth-child(2), */
-        .bordercolor tbody tr td.windowbg2:nth-child(4),
-        .bordercolor tbody tr td.windowbg:nth-child(5),
-        .bordercolor tbody tr td.windowbg:nth-child(6),
-        .bordercolor tbody tr td.windowbg2:nth-child(7)
-				{
-        	display: none;
-        }
-        
         .windowbg,
         .windowbg2 {
         	border: 0;
@@ -286,17 +283,7 @@
           display: none;
         }*/
 
-        .bordercolor { background-color: transparent !important; }
-        .catbg3:nth-child(0),
-        .catbg3:nth-child(2),
-        .catbg3:nth-child(3),
-        div.nav:nth-child(1),
-        table.titlebg2,
-        #footerarea,
-        .titlebg2
-        {
-          display: none !important;
-        }
+        
         div.nav { margin: 0 !important; }
         table:has(td.maintab_back) {
         	width:100% !important;
@@ -307,6 +294,32 @@
         }
         .poster_info .smalltext { opacity:0.4; display:none; }
     		`;
+        
+        if(params['action']!='profile')
+          css += `
+            hr,
+            table[cellpadding="3"] table[cellpadding="5"] td.smalltext[valign="bottom"][width="85%"],
+            .bordercolor tbody tr td.windowbg2:nth-child(1),
+            /* .bordercolor tbody tr td.windowbg2:nth-child(2), */
+            .bordercolor tbody tr td.windowbg2:nth-child(4),
+            .bordercolor tbody tr td.windowbg:nth-child(5),
+            .bordercolor tbody tr td.windowbg:nth-child(6),
+            .bordercolor tbody tr td.windowbg2:nth-child(7)
+            {
+              display: none;
+            }
+            .bordercolor { background-color: transparent !important; }
+            .catbg3:nth-child(0),
+            .catbg3:nth-child(2),
+            .catbg3:nth-child(3),
+            div.nav:nth-child(1),
+            table.titlebg2,
+            #footerarea,
+            .titlebg2
+            {
+              display: none !important;
+            }
+          `;
 
         var style = document.createElement('style');
         style.type = 'text/css';
